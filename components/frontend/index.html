@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance Suite</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Professional Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="brand">
+                <i class="fas fa-shield-alt"></i>
+                ComplianceCore
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item active" data-tab="upload" onclick="switchTab('upload')">
+                    <i class="fas fa-upload"></i> Upload
+                </li>
+                <li class="nav-item" data-tab="analyze" onclick="switchTab('analyze')">
+                    <i class="fas fa-search"></i> Analyze
+                </li>
+                <li class="nav-item" data-tab="results" onclick="switchTab('results')">
+                    <i class="fas fa-chart-line"></i> Results
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Tab Content -->
+    <div class="main-content">
+        <!-- Upload Tab -->
+        <div id="upload" class="tab-pane active">
+            <div class="section-header">
+                <h2><i class="fas fa-upload"></i> Document Upload</h2>
+                <p>Upload your compliance documents for analysis</p>
+            </div>
+            <div id="upload-placeholder">
+                <!-- Streamlit file uploader will be moved here -->
+            </div>
+        </div>
+
+        <!-- Analyze Tab -->
+        <div id="analyze" class="tab-pane">
+            <div class="section-header">
+                <h2><i class="fas fa-search"></i> Document Analysis</h2>
+                <p>Text extraction, field parsing, and AI-powered Q&A</p>
+            </div>
+            <div id="analyze-placeholder">
+                <!-- Streamlit analysis widgets will be moved here -->
+            </div>
+        </div>
+
+        <!-- Results Tab -->
+        <div id="results" class="tab-pane">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-line"></i> Compliance Results</h2>
+                <p>Compliance status, database operations, and reports</p>
+            </div>
+            <div id="results-placeholder">
+                <!-- Streamlit results and sidebar will be moved here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // This will be replaced by scripts.js content
+    </script>
+</body>
+</html>

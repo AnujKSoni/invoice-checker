@@ -1,0 +1,320 @@
+/* Modern CSS Variables */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --warning-color: #f59e0b;
+    --background-color: #f8fafc;
+    --surface-color: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Navigation */
+.navbar {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 1rem 0;
+    box-shadow: var(--shadow-md);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    padding: 0.75rem 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 80px;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.section-header h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+}
+
+/* Tab Panes */
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Streamlit Element Styling */
+.stFileUploader {
+    background: white;
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stFileUploader:hover {
+    border-color: var(--primary-color);
+    background: rgba(37, 99, 235, 0.02);
+}
+
+.stSelectbox {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.stTextInput, .stTextArea {
+    margin-bottom: 1rem;
+}
+
+.stTextInput > div > div > input,
+.stTextArea > div > div > textarea {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.stTextInput > div > div > input:focus,
+.stTextArea > div > div > textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.stButton > button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.stDownloadButton > button {
+    background: linear-gradient(135deg, var(--success-color), #059669);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.stDownloadButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Compliance Cards */
+.metric-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.success-card {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    border-left: 4px solid var(--success-color);
+}
+
+.error-card {
+    background: linear-gradient(135deg, #fef2f2, #fecaca);
+    border-left: 4px solid var(--error-color);
+}
+
+.metric-card h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.success-card h3 {
+    color: #065f46;
+}
+
+.error-card h3 {
+    color: #991b1b;
+}
+
+/* Sidebar Styling */
+.stSidebar {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Data Frame Styling */
+.stDataFrame {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Form Styling */
+.stForm {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    margin: 1rem 0;
+}
+
+/* Success/Error Messages */
+.stSuccess {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    border: 1px solid var(--success-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.stError {
+    background: linear-gradient(135deg, #fef2f2, #fecaca);
+    border: 1px solid var(--error-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .nav-item {
+        text-align: center;
+    }
+    
+    .main-content {
+        margin-top: 140px;
+        padding: 1rem;
+    }
+    
+    .section-header {
+        padding: 1rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Hide Streamlit elements */
+#MainMenu, header, footer {
+    visibility: hidden;
+}
+
+.stApp > header,
+.stApp > footer {
+    display: none;
+}
